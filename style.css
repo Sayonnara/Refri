@@ -1,0 +1,83 @@
+.item{
+    display: none; /*Para  fazer sumir ou seja a classe  item */
+    width: 100%; /*Para ocupar todo o espaço  largura*/
+    height: 100%; /*Para ocupar todo o espaço altura*/
+    position: absolute; /*Para ficar exatamente onde quero*/
+    top:0; /*significa vá para o top*/
+    left: 0; /*esquerda*/
+    overflow: hidden;/*Caso fique muito grande tira o scroll*/
+    background-color: var(--background);
+
+}
+
+.item.active{ /*Somente a classe  item e active irá aparecer*/
+    display: block;/* */
+}  
+
+.item .title{
+    font-size: 15rem;
+    color: #ffff;
+    font-weight: bold;
+    text-align: center;
+    /*Dica quando quiser centralizar qualquer coisa use esse codigo faça isso abaixo */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+.item .fruit{
+    width: 900px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    z-index: 3;
+}
+
+.item .refri{
+    z-index: 2;
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#prev ,#next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color:#eee9;
+    border: 1px solid #eee9;
+    color: #eee;
+    font-size:  x-large;
+    font-family: monospace;
+    cursor: pointer;
+    z-index: 4;
+    border-radius: 50%;
+}
+
+#prev{
+    left: 30px;
+}
+#next{ 
+    right: 30px;
+}
+/*Depois de terminar o javascript vamos fazer a ultima animação*/
+/*Dei o nome de toActive*/
+@keyframes toActive {
+    from {
+      top: 100%;
+      opacity: 0;
+    }
+}
+  
+.item.active img.fruit{
+    animation: toActive 0.5s ease-in-out 1;
+} 
+.item.active .title{
+    animation: toActive 0.5s ease-in-out 1;
+}
